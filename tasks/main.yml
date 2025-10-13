@@ -5,22 +5,17 @@
     msg: "This role only supports Fedora hosts. Detected {{ ansible_facts['distribution'] }}."
   when: ansible_facts['distribution'] != "Fedora"
 
-- name: Remove old Docker versions
-  ansible.builtin.dnf:
-    name:
-      - docker
-      - docker-client
-      - docker-client-latest
-      - docker-common
-      - docker-latest
-      - docker-latest-logrotate
-      - docker-logrotate
-      - docker-selinux
-      - docker-engine-selinux
-      - docker-engine
-    state: absent
-  register: remove_packages_result
-  changed_when: "remove_packages_result.rc != 0"
+- name: Remove old Docker versions safely on Fedora
+  ansible.builtin.command: >
+    dnf remove -y
+    docker docker-client docker-client-latest docker-common
+    docker-latest docker-latest-logrotate docker-logrotate
+    docker-selinux docker-engine-selinux docker-engine
+    --skip-broken --allowerasing --setopt=obsoletes=0 || true
+  register: remove_docker_result
+  changed_when: "'Removed' in remove_docker_result.stdout"
+  failed_when: false
+
 
 - name: Safely remove old Docker data with 'cleanup_docker' tag
   block:

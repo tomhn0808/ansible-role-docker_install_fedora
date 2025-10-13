@@ -13,6 +13,8 @@
         privileged: true
         detach: true
         ports: []
+        networks:
+          - name: bridge
 
       register: container_result1
 
@@ -25,6 +27,9 @@
         privileged: true
         detach: true
         ports: []
+        networks:
+          - name: bridge
+
       register: container_result2
 
     - name: Create a Fedora container (latest)
@@ -36,6 +41,8 @@
         privileged: true
         detach: true
         ports: []
+        networks:
+          - name: bridge
       register: container_result3
 
     - name: Display container ID
