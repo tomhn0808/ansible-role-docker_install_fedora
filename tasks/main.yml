@@ -56,6 +56,11 @@
     enabled: true
   when: ansible_virtualization_type != "docker" # Don't enable inside Docker (no Systemd in docker)
 
+- name: Install Docker Python module
+  ansible.builtin.package:
+    name: python3-docker
+    state: present
+
 - name: Add users to docker group
   ansible.builtin.user:
     name: "{{ item }}"
