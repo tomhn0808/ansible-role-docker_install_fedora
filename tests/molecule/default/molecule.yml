@@ -9,16 +9,14 @@ dependency:
 
 driver:
   name: default
-  
+
 lint: |
   yamllint .
   ansible-lint
 
 provisioner:
   name: ansible
-  # --- START: Consolidated Ansible Configuration ---
-  
-  # Formerly the top-level 'ansible:cfg:' block, now 'config_options:'
+
   config_options:
     defaults:
       remote_tmp: /tmp
@@ -27,12 +25,10 @@ provisioner:
     ssh_connection:
       pipelining: true
 
-  # Formerly the top-level 'ansible:env:' block, moved here
   env:
     ANSIBLE_FORCE_COLOR: "1"
     ANSIBLE_LOAD_CALLBACK_PLUGINS: "1"
-    
-  # Formerly the top-level 'ansible:executor:' block, moved here
+
   executor:
     backend: ansible-playbook
     args:
@@ -40,22 +36,19 @@ provisioner:
         - --mode stdout
         - --pull-policy missing
         - --execution-environment-image ghcr.io/ansible/community-ansible-dev-tools:latest
-        
-  # Formerly the top-level 'ansible:playbooks:' block, moved here
+
   playbooks:
     create: create.yml
     prepare: prepare.yml
     converge: converge.yml
     destroy: destroy.yml
     verify: verify.yml
-    
-  # Existing inventory block remains, now correctly placed
+
   inventory:
     group_vars:
       all:
         ansible_connection: docker
 
-  # --- END: Consolidated Ansible Configuration ---
 
 platforms:
   - name: molecule_fedora41

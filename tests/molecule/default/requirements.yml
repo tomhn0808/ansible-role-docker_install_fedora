@@ -3,6 +3,5 @@ collections:
     version: ">=3.10.4"
 
 roles:
-  - src: https://github.com/tomhn0808/ansible-role-docker_install_fedora # Or the Galaxy URL if it's on Galaxy
+  - src: https://github.com/tomhn0808/ansible-role-docker_install_fedora
     name: tomhn0808.docker_install_fedora
-
