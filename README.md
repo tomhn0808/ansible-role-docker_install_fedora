@@ -8,7 +8,7 @@ Requirements
 ------------
 
 - Target host must be running Fedora server (v41 or 42).
-- Ansible 2.9+ recommended.
+- Ansible 2.15+ recommended (using python environnment).
 
 
 Role Variables
