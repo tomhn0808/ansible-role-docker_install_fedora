@@ -7,7 +7,7 @@ This Ansible role installs and configures Docker Engine on Fedora hosts. It ensu
 Requirements
 ------------
 
-- Target host must be running Fedora server (v41 or 42).
+- Target host must be running Fedora server (v41 , 42 or latest).
 - Ansible 2.15+ recommended (using python environnment).
 
 
