@@ -4,7 +4,7 @@ This Ansible role installs and configures Docker Engine on Fedora hosts. It ensu
 
 |Molecule test|Downloads|
 |------|---------|
-|[[![Ansible Molecule](https://github.com/tomhn0808/ansible-role-docker_install_fedora/actions/workflows/molecule.yml/badge.svg)](https://github.com/tomhn0808/ansible-role-docker_install_fedora/actions/workflows/molecule.yml)|[![Downloads](https://img.shields.io/ansible/role/d/tomhn0808/docker_install_fedora)](https://galaxy.ansible.com/tomhn0808/docker_install_fedora)|
+|[![Ansible Molecule](https://github.com/tomhn0808/ansible-role-docker_install_fedora/actions/workflows/molecule.yml/badge.svg)](https://github.com/tomhn0808/ansible-role-docker_install_fedora/actions/workflows/molecule.yml)|[![Downloads](https://img.shields.io/ansible/role/d/tomhn0808/docker_install_fedora)](https://galaxy.ansible.com/tomhn0808/docker_install_fedora)|
 
 
 Requirements
