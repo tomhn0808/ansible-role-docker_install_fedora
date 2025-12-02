@@ -2,7 +2,7 @@ galaxy_info:
   author: tomhn0808
   description: Install and configure Docker CE on Fedora
   role_name: docker_install_fedora
-  license: MIT
+  license: Apache-2.0
 
   min_ansible_version: 2.1
 
