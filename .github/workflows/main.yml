@@ -11,6 +11,7 @@ jobs:
 
       - name: Molecule
         uses: gofrolist/molecule-action@v2
+        working-directory: tomhn0808/ansible-role-docker_install_fedora
         with:
           molecule_command: test
-          molecule_working_dir: "${{ github.repository }}/tests/molecule/default/"
+          molecule_working_dir: "tests/molecule/"
